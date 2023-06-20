@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    align-items: center;
+    justify-content: center;
+    /*Centra todos los elementos dentro del body*/
+    height: auto;
+    /*Establecemos la altura de los elementos dentro de nuestro body*/
+    background-image: linear-gradient(27deg, #00008B 25%, #F0FFFF);
+}
+
+
+
+
+#Nav-Principal {
+    display: flex;
+    border: 3px solid;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+
+
