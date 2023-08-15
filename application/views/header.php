@@ -65,7 +65,7 @@
                 if(isset($_SESSION)):?>
                     <a href=<?= base_url()."Welcome/AdministracionUsuario"?>>USUARIOS</a>
                     <div class="rro" style="margin-left: 10px;"></div>
-                    <a href="#">MAPA CONVENIO</a>
+                    <a href="<?=base_url()."Welcome/AdministracionMapi"?>">MAPA CONVENIO</a>
 
                 <?php else:?>
                   <a href="http://sgo.juventudesgto.com/Directorio/Directorio.html" title="Contacto" target="_blank">  DIRECTORIO </a>

@@ -11,7 +11,6 @@ class Welcome extends CI_Controller {
 	}
 
 
-
 	function index(){
 		$this->load->view('header');
 		$this->load->view('SessionUsuario');
@@ -37,9 +36,50 @@ class Welcome extends CI_Controller {
 	function AdministracionUsuario(){
 		session_start();
 		if(count($_SESSION)>0){
-			$data['EmpleadoJuventudes'] = $this->CRUDESQL->VisualizacionEmpleados();
+			$data['EmpleadoJuventudes'] = $this->CRUDESQL->Informacion();
 			$this->load->view('header');
 			$this->load->view('Usuario',$data);
+			$this->load->view('footer');
+		}else{
+			redirect('Welcome/AdministracionSession');
+		}
+	}
+
+	function AdministracionMapi(){
+		session_start();
+		if(count($_SESSION)>0){
+			$this->load->view('header');
+			$this->load->view('MapaMundi');
+			$this->load->view('footer');
+		}else{
+			redirect('Welcome/AdministracionSession');
+		}
+	}
+
+	function AdministracionForm(){
+		session_start();
+		if(count($_SESSION)>0){
+			$data['data'] = $this->CRUDESQL->Laboral();
+			$this->load->view('header');
+			$this->load->view('RegistroEmpleado', $data);
+			$this->load->view('footer');
+		}else{
+			redirect('Welcome/AdministracionSession');
+		}
+	}
+
+	function EditarUsuario(){
+		session_start();
+		if(count($_SESSION)>0){
+			$ID = $this->input->get('id');
+			$datos = $this->CRUDESQL->GetDatos($ID);
+			$data['data'] = $this->CRUDESQL->Laboral();
+			$Arr = array(
+				'data' => $data,
+				'Empleado' => $datos,
+			);
+			$this->load->view('header');
+			$this->load->view('EditarUsuario', $Arr);
 			$this->load->view('footer');
 		}else{
 			redirect('Welcome/AdministracionSession');

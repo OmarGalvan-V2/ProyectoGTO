@@ -6,7 +6,7 @@ class SessionSQL extends CI_Model
 
     function Login($Usuario, $Password)
     {   
-        $Resultado = $this->db->query("select * from loginadministrativo where Usuario = '" . $Usuario . "' and Password = '" . $Password . "'");
+        $Resultado = $this->db->query("select * from empleadojuventudes where Usuario = '" . $Usuario . "' and Password = '" . $Password . "'");
         return $Resultado->result_array(); //Convierte el array en una consulta
     }
 }

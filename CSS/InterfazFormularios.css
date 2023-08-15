@@ -1,0 +1,52 @@
+#Carta {
+    width: 700px;
+    margin: auto;
+    border: 5px solid black;
+    padding: 20px;
+    border-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.card {
+width: 400px;
+margin: auto;
+padding: 20px;
+border: none;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+font-family: 'Times New Roman', Times, serif;
+text-align: center;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.label {
+font-weight: bold;
+}
+
+.input-icon {
+display: flex;
+align-items: center;
+}
+
+.input-icon i {
+margin-right: 10px;
+}
+
+.botones {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+.btn-primary {
+margin-right: 10px;
+}
+
+.btn-danger {
+margin-left: 10px;
+}

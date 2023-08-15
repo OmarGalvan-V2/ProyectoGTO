@@ -8,88 +8,23 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="stylesheet" href=<?= base_url() . "CSS/InterfazUsuario.CSS" ?>>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="https://kit.fontawesome.com/c575c56047.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 
 <script>
-        $(function() {
-            $.validator.addMethod("noNumbers", function(value, element) {
-                return this.optional(element) || /^[^\d]+$/.test(value);
-            }, "No se permiten números en este campo");
-
-            let pet = $('.modal.#FormP').attr('action');
-            let met = $('.modal.#FormP').attr('method');
-            $('#FormR').validate({
-                rules: {
-                    Nombre: {
-                        required: true,
-                        noNumbers: true
-                    },
-                    Paterno: {
-                        required: true,
-                        noNumbers: true
-                    },
-                    Materno: {
-                        required: true,
-                        noNumbers: true,
-                    }
-                },
-                messages: {
-                    Nombre: {
-                        required: 'Por favor, ingresa el Nombre',
-                        noNumbers: 'Por favor, No ingresar numeros en este campo'
-                    },
-                    Paterno: {
-                        required: 'Por favor, ingresa el Apellido Paterno',
-                        noNumbers: 'Por favor, No ingresar numeros en este campo'
-                    },
-                    Materno: {
-                        required: 'Por favor, ingresa un Apellido Materno',
-                        noNumbers: 'Por favor, No ingresar numeros en este campo'
-                    }
-                },
-                errorPlacement: function(error, element) {
-                    // Muestra los mensajes de error debajo de los campos correspondientes
-                    error.appendTo(element.next('.invalid-feedback'));
-                },
-                highlight: function(element, errorClass, validClass) {
-                    // Agrega la clase 'is-invalid' al campo de entrada si hay un error
-                    $(element).addClass('is-invalid');
-                },
-                submitHandler: function(form) {
-                    // Envía el formulario con AJAX si pasa la validación
-                    $.ajax({
-                        url: pet,
-                        type: met,
-                        data: $(form).serialize(),
-                        success: function(resp) {
-                            if (resp == 'Error') {
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Favor De Llenar los datos solicitados'
-                                })
-                            } else {
-                                Swal.fire({
-                                    title: 'El empleado ha sido registrado correctamente!',
-                                    text: 'Click para continuar!',
-                                    icon: 'success'
-                                }).then(() => {
-                                    window.location.href = 'http://localhost/ProyectoGTO/Welcome/Administracion'
-                                });
-                            }
-                        }
-                    });
-                }
-            });
+    let table = new DataTable('#table');
+    $(function() {
+        $('#table').DataTable({
+            "paging": true,
+            "searching": true,
+            "lengthMenu": [10, 25, 50],
+            "order": [0, 'asc'],
         });
+    })
 </script>
-
-
-
 
 <style>
     .Contenedor-Nav {
@@ -97,11 +32,20 @@
         margin-top: -89px;
     }
 
-
-    .Modal {
-        width: 100%;
+    .nav-link {
         display: flex;
-        justify-content: center;
+        padding: .5rem 1rem;
+        justify-content: space-evenly;
+    }
+
+    button {
+        display: flex;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    .fa fa-user-secret {
+        padding: 10px;
     }
 </style>
 
@@ -111,67 +55,11 @@
 
     <!--Aqui Es El Registro De Los Empleados-->
     <div class="Contenedor-Nav">
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Registrar Empleado
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Registrar JuventudEsGTO</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="FormP" action=<?= base_url() . "CRUDEP/InserccionEmpleados" ?> method="POST">
-                                    <div class="form-row">
-                                        <div class="col">
-                                            <div style="display: flex;justify-content: center;align-items: center;"><i class="material-icons">&#xe87c;</i> <input type="text" name="Nombre" value="<?php echo set_value('Nombre'); ?>" class="form-control" class="Nombre" id="Nombre" placeholder="Nombre"></div>
-                                            <small class="invalid-feedback"></small>
-                                        </div>
-                                        <div class="col">
-                                            <div style="display: flex;justify-content: center;align-items: center;"><i class="material-icons">&#xe7fb;</i> <input type="text" class="form-control" name="Paterno" value="<?php echo set_value('Paterno'); ?>" class="Paterno" id="Paterno" placeholder="Apellido Paterno"></div>
-                                            <small class="invalid-feedback"></small>
-                                        </div>
-                                        <div class="col">
-                                            <div style="display: flex;justify-content: center;align-items: center;"><i class="material-icons">&#xe7fb;</i> <input type="text" class="form-control" name="Materno" value="<?php echo set_value('Materno'); ?>" class="Materno" id="Materno" placeholder="Apellido Materno"></div>
-                                            <small class="invalid-feedback"></small>
-                                        </div>
-                                    </div>
-
-                                    <br>
-
-                                    <div class="form-row">
-                                        <div class="col">
-                                            <div style="display: flex;justify-content: center;align-items: center;"><i class="class material-icons">&#xe0be;</i><input type="text" class="form-control" name="Correo" value="<?php echo set_value('Correo'); ?>" class="Correo" id="Correo" placeholder="Correo"></div>
-                                        </div>
-
-                                        <div class="col">
-                                            <div style="display: flex;justify-content: center;align-items: center;"><i class="class material-icons"></i><input type="text" class="form-control" name="PuestoLaboral" class="PuestoLaboral" id="PuestoLaboral" value="<?php echo set_value('PuestoLaboral'); ?>" placeholder="Puesto Laboral"></div>
-                                        </div>
-                                        <div class="col">
-                                            <div style="display: flex;justify-content: center;align-items: center;"><i class="class material-icons"></i><input type="text" class="form-control" name="AreaLaboral" class="AreaLaboral" value="<?php echo set_value('AreaLaboral'); ?>" id="AreaLaboral" placeholder="Area-[Laboral]"></div>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <!-- Button trigger modal -->
+        <a class="btn btn-outline-primary menu-link nav-link Formulario" href=<?= base_url() . 'Welcome/AdministracionForm' ?>>
+            Registrar Empleado y/o Usuario
+        </a>
     </div>
-    <br>
 
     <!--Aqui Inicia La Tabla De Los Empleados-->
     <div class="prime-area">
@@ -207,8 +95,8 @@
                                         <td><?= $EmpleadoJuventudes[$i]['Correo'] ?></td>
                                         <td><?= $EmpleadoJuventudes[$i]['PuestoLaboral'] ?></td>
                                         <td><?= $EmpleadoJuventudes[$i]['AreaLaboral'] ?></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td><a  class="btn btn-primary" href=<?= base_url() . "Welcome/EditarUsuario?id=" . $EmpleadoJuventudes[$i]['ID']  ?>><i class="fa fa-user-secret" aria-hidden="true"></i></a></td>
+                                        <td><button type="button" class="btn btn-danger"><i class="fa fa-user-times" aria-hidden="true"></i></button></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -218,7 +106,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
