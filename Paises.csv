@@ -1,0 +1,242 @@
+4,Antigua y Barbuda,AG,0
+5,Anguila,IA,0
+6,Albania,AL,0
+7,Armenia,AM,0
+8,Antillas Neerlandesas,AN,0
+9,Angola,AO,0
+10,Antártida,AQ,0
+11,Argentina,AR,1
+12,Samoa Americana,AS,0
+13,Austria,AT,0
+14,Australia,AU,1
+15,Aruba,AW,0
+16,Azerbaiyán,AZ,0
+17,Bosnia y Herzegovina,BA,0
+18,Barbados,BB,0
+19,Bangladés,BD,0
+20,Bélgica,BE,0
+21,Burkina Faso,BF,0
+22,Bulgaria,BG,0
+23,Baréin,BH,0
+24,Burundi,BI,0
+25,Benín,BJ,0
+26,Bermudas,BM,0
+27,Brunéi,BN,0
+28,Bolivia,BO,1
+29,Brasil,BR,1
+30,Bahamas,BS,0
+31,Bután,BT,0
+32,Isla Bouvet,BV,0
+33,Botsuana,BW,0
+34,Bielorrusia,BY,0
+35,Belice,BZ,0
+36,Canadá,ca,1
+37,Islas Cocos (Keeling),CC,0
+38,Congo (RDC),CD,0
+39,República Centroafricana,CF,0
+40,Congo (República del),CG,0
+41,Suiza,CH,0
+42,Costa de Marfil,CI,0
+43,Islas Cook,CK,0
+44,Chile,CL,1
+45,Camerún,CM,0
+46,China,CN,1
+47,Colombia,CO,1
+48,Costa Rica,CR,1
+49,Cuba,CU,1
+50,Cabo Verde,CV,0
+51,Isla de Navidad,CX,0
+52,Chipre,CY,0
+53,República Checa,CZ,0
+54,Alemania,DE,1
+55,Yibuti,DJ,0
+56,Dinamarca,DK,0
+57,Dominica,DM,0
+58,República Dominicana,DO,1
+59,Argelia,DZ,0
+60,Ecuador,EC,1
+61,Estonia,EE,0
+62,Egipto,EG,0
+63,Sahara Occidental,EH,0
+64,Eritrea,ER,0
+65,España,ES,1
+66,Etiopía,ET,0
+67,Finlandia,FI,0
+68,Fiyi,FJ,0
+69,Islas Malvinas (Falkland Islands),FK,0
+70,Micronesia,FM,0
+71,Islas Feroe,FO,0
+72,Francia,FR,1
+73,Gabón,DG,0
+74,Reino Unido,GB,1
+75,Granada,GD,0
+76,Georgia,GE,0
+77,Guayana Francesa,GF,0
+78,Guernesey,GG,0
+79,Ghana,GH,0
+80,Gibraltar,GI,0
+81,Groenlandia,GL,0
+82,Gambia,GM,0
+83,Guinea,GN,0
+84,Guadalupe,PJ,0
+85,Guinea Ecuatorial,GQ,0
+86,Grecia,GR,0
+87,Islas Georgias del Sur y Sándwich del Sur,GS,0
+88,Guatemala,GT,1
+89,Guam,GU,0
+90,Guinea-Bisáu,GW,0
+91,Guyana,GY,0
+92,Franja de Gaza,GZ,0
+93,Hong Kong,HK,0
+94,Islas Heard y McDonald,HM,0
+95,Honduras,HN,1
+96,Croacia,HR,0
+97,Haití,HT,0
+98,Hungría,HU,0
+99,Indonesia,ID,0
+100,Irlanda,IE,0
+101,Israel,IL,0
+102,Isla de Man,IM,0
+103,India,IN,0
+104,Territorio Británico del Océano Índico,IO,0
+105,Irak,IQ,0
+106,Irán,IR,0
+107,Islandia,IS,0
+108,Italia,IT,0
+109,Jersey,JE,0
+110,Jamaica,JM,0
+111,Jordania,JO,0
+112,Japón,JP,1
+113,Kenia,KE,0
+114,Kirguistán,KG,0
+115,Camboya,KH,0
+116,Kiribati,KI,0
+117,Comoras,KM,0
+118,San Cristóbal y Nieves,KN,0
+119,Corea del Norte,KP,0
+120,Corea del Sur,KR,0
+121,Kuwait,KW,0
+122,Islas Caimán,KY,0
+123,Kazajistán,KZ,0
+124,Laos,LA,0
+125,Líbano,LB,0
+126,Santa Lucía,LC,0
+127,Liechtenstein,LI,0
+128,Sri Lanka,LK,0
+129,Liberia,LR,0
+130,Lesoto,LS,0
+131,Lituania,LT,0
+132,Luxemburgo,LU,0
+133,Letonia,LV,0
+134,Libia,LY,0
+135,Marruecos,MA,0
+136,Mónaco,MC,0
+137,Moldavia,MD,0
+138,Montenegro,ME,0
+139,Madagascar,MG,0
+140,Islas Marshall,MH,0
+141,Macedonia (ARYM),MK,0
+142,Malí,ML,0
+143,Myanmar (Birmania),MM,0
+144,Mongolia,MN,0
+145,Macao,MO,0
+146,Islas Marianas del Norte,MP,0
+147,Martinica,MQ,0
+148,Mauritania,MR,0
+149,Montserrat,MS,0
+150,Malta,MT,0
+151,Mauricio,MU,0
+152,Maldivas,MV,0
+153,Malaui,MW,0
+154,México,MX,1
+155,Malasia,MY,0
+156,Mozambique,MZ,0
+157,Namibia,N/A,0
+158,Nueva Caledonia,NC,0
+159,Níger,NE,0
+160,Isla Norfolk,NF,0
+161,Nigeria,NG,0
+162,Nicaragua,NI,1
+163,Países Bajos,NL,1
+164,Noruega,NO,0
+165,Nepal,NP,0
+166,Nauru,NR,0
+167,Niue,NU,0
+168,Nueva Zelanda,NZ,0
+169,Omán,OM,0
+170,Panamá,PA,1
+171,Perú,PE,1
+172,Polinesia Francesa,PF,0
+173,Papúa Nueva Guinea,PG,0
+174,Filipinas,PH,0
+175,Pakistán,PK,0
+176,Polonia,PL,0
+177,San Pedro y Miquelón,p.m.,0
+178,Islas Pitcairn,PN,0
+179,Puerto Rico,PR,0
+180,Territorios palestinos,PS,0
+181,Portugal,PT,1
+182,Palaos,PW,0
+183,Paraguay,PY,1
+184,Catar,QA,0
+185,Reunión,RE,0
+186,Rumania,RO,0
+187,Serbia,RS,0
+188,Rusia,RU,0
+189,Ruanda,RW,0
+190,Arabia Saudita,SA,0
+191,Islas Salomón,SB,0
+192,Seychelles,SC,0
+193,Sudán,SD,0
+194,Suecia,SE,0
+195,Singapur,SG,0
+196,Santa Elena,SH,0
+197,Eslovenia,SI,0
+198,Svalbard y Jan Mayen,SJ,0
+199,Eslovaquia,SK,0
+200,Sierra Leona,SL,0
+201,San Marino,SM,0
+202,Senegal,SN,0
+203,Somalia,SO,0
+204,Surinam,SR,0
+205,Santo Tomé y Príncipe,ST,0
+206,El Salvador,SV,1
+207,Siria,SY,0
+208,Suazilandia,SZ,0
+209,Islas Turcas y Caicos,TC,0
+210,Chad,TD,0
+211,Territorios Australes Franceses,TF,0
+212,Togo,TG,0
+213,Tailandia,TH,0
+214,Tayikistán,TJ,0
+215,Tokelau,TK,0
+216,Timor Oriental,TL,0
+217,Turkmenistán,TM,0
+218,Túnez,TN,0
+219,Tonga,TO,0
+220,Turquía,TR,0
+221,Trinidad y Tobago,TT,0
+222,Tuvalu,TV,0
+223,Taiwán,TW,0
+224,Tanzania,TZ,0
+225,Ucrania,UA,0
+226,Uganda,UG,0
+227,Islas Ultramarinas Menores de Estados Unidos,UM,0
+228,Estados Unidos,US,1
+229,Uruguay,UY,1
+230,Uzbekistán,UZ,0
+231,Ciudad del Vaticano,VA,0
+232,San Vicente y las Granadinas,VC,0
+233,Venezuela,VE,1
+234,Islas Vírgenes Británicas,VG,0
+235,Islas Vírgenes de los EE.UU.,VI,0
+236,Vietnam,VN,0
+237,Vanuatu,VU,0
+238,Wallis y Futuna,WF,0
+239,Samoa,WS,0
+240,Kosovo,XK,0
+241,Yemen,YE,0
+242,Mayotte,YT,0
+243,Sudáfrica,ZA,0
+244,Zambia,ZM,0
+245,Zimbabue,ZW,0

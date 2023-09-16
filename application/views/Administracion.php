@@ -16,16 +16,16 @@
 
 <body class="body">
 
-<div class='Sign-up'>
+    <div class='Sign-up' style="margin-top: -80px;">
 
-<img class='img' src=<?= base_url() . "/img/04.png" ?>>
+        <img class='img' src=<?= base_url() . "/img/04.png" ?>>
 
-<center class="pSession"><b>Bienvenido <?php echo $_SESSION['datos'][0]['Usuario']; ?> </b></center>
+        <center class="pSession"><b>Bienvenido <?php echo $_SESSION['datos'][0]['Usuario']; ?> </b></center>
 
 
-</form>
+        </form>
 
-</div>
+    </div>
 
 </body>
 

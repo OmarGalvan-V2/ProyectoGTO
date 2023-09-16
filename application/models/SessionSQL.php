@@ -9,6 +9,9 @@ class SessionSQL extends CI_Model
         $Resultado = $this->db->query("select * from empleadojuventudes where Usuario = '" . $Usuario . "' and Password = '" . $Password . "'");
         return $Resultado->result_array(); //Convierte el array en una consulta
     }
+
+
+
 }
 
 ?>

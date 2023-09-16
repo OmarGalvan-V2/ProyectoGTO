@@ -3,26 +3,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-
-
-
- 
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
 <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
 <script  src="js/script.js" ></script>
 <script  src="slide/js/swiper.min.js" ></script>
-
-    <script type="text/javascript">
-        $('#table').DataTable({
-            language: {
-                url: 'https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json'
-
-            }
-        });
-    </script>
 
   
     <!-- Initialize Swiper -->

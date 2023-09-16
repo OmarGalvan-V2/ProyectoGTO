@@ -14,8 +14,6 @@
 }
 
 
-
-
 #Nav-Principal {
     display: flex;
     border: 3px solid;
@@ -23,5 +21,176 @@
     align-items: center;
 }
 
+.Contenedor-Nav {
+    border: 3px solid cornflowerblue;
+    margin-top: -89px;
+}
+
+.nav-link {
+    display: flex;
+    padding: .5rem 1rem;
+    justify-content: space-evenly;
+}
+
+button {
+    display: flex;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.fa fa-user-secret {
+    padding: 10px;
+}
+
+/* Estilos para el contenedor de botones */
+.contenedor-botones {
+    display: flex;
+    transform: translate(0px, -105px);
+    justify-content: center;
+    /* Ajusta el espacio desde la derecha */
+}
+
+/* Estilos para el botón */
+
+.btn.formulario {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn.formulario:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s, color 0.3s;
+}
 
 
+/* Estilo para la tabla */
+#table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Estilo para las filas pares */
+#table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para las filas impares */
+#table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Estilo para las celdas de encabezado */
+#table th {
+    background-color: #1A237E;
+    color: white;
+    text-align: left;
+}
+
+/* Estilo para las celdas de datos */
+#table td {
+    padding: 8px;
+}
+
+/* Estilo para los botones de acción */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para los botones Editar */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+}
+
+/* Estilo para los botones Eliminar */
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 3px;
+}
+
+.switch-container {
+    margin-top: 0px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    /* Ancho del interruptor */
+    height: 20px;
+    /* Altura del interruptor */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 10px;
+    /* Borde redondeado del interruptor */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    /* Altura del control deslizante */
+    width: 16px;
+    /* Ancho del control deslizante */
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+    /* Borde redondeado del control deslizante */
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(20px);
+    /* Ancho total - ancho del control deslizante */
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 20px;
+    /* Borde redondeado del interruptor */
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#status {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}

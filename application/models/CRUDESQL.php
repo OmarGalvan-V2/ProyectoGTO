@@ -25,7 +25,6 @@ class CRUDESQL extends CI_Model{
     function ActualizarEmpleado($id, $data){
         $this->db->where($id, 'id');
         $this->db->update('empleadojuventudes', $data);
-
     }
     
     function Laboral(){
@@ -35,30 +34,26 @@ class CRUDESQL extends CI_Model{
     }
 
     function Informacion(){
-        $Consulta = $this->db->query('SELECT e.ID, e.Nombre, e.Paterno, e.Materno, e.Correo, e.PuestoLaboral, a.AreaLaboral
+        $Consulta = $this->db->query('SELECT e.ID, e.Nombre, e.Paterno, e.Materno, e.Correo, e.PuestoLaboral, a.AreaLaboral, e.Status
                                       FROM  empleadojuventudes e
                                       INNER JOIN ar a on a.ID = e.AreaLaboral');
         return $Consulta->result_array();
     }
 
-    public function ConsultaConv($Countryid) {
-        $Consulta = $this->db->query('SELECT Pais, Descripcion, Instrucciones
-                                      FROM convocatorias
-                                      WHERE Pais = ?', array($Countryid));
+
+    public function actualizar_estado($ID, $data)
+    {
+        print_r($data);
+        $this->db->where('ID', $ID);
+        $this->db->update('empleadojuventudes', $data);
     
-        $result = $Consulta->result_array();
-    
-        $response = array();
-    
-        if (empty($result)) {
-            $response['success'] = false;
-            $response['message'] = 'No se encontraron resultados';
+        // Verificar si la actualización fue exitosa
+        if ($this->db->affected_rows() > 0) {
+            echo 'Actualización exitosa'; 
         } else {
-            $response['success'] = true;
-            $response['data'] = $result;
+            echo 'La actualización no tuvo efecto';
         }
-    
-        echo json_encode($response);
     }
+    
 }
 ?>
