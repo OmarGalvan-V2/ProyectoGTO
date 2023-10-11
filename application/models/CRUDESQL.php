@@ -29,13 +29,10 @@ class CRUDESQL extends CI_Model {
     function ActualizarEmpleado($id, $data) {
         $this->db->where('ID', $id);
         $this->db->update('empleadojuventudes', $data);
-        $success = ($this->db->affected_rows() === 1);
-        $response = array(
-            'ok' => $success,
-            'Errors' => ($success ? '' : $this->db->error()),
+        return array(
+            'ok' => ($this->db->affected_rows() != 1) ? true : false ,
+            'Errors' => ($this->db->affected_rows() != 1) ? $this->db->error() : '',
         );
-
-        return $response;
     }
 
     // Esta función obtiene la lista de áreas laborales.

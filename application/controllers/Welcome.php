@@ -29,7 +29,7 @@ class Welcome extends CI_Controller
 	{
 		session_start();
 		if (isset($_SESSION) > 0) {
-			if ($_SESSION['datos'][0]['Status'] == '1' && $_SESSION['datos'][0]['Rol'] == '1') {
+			if ($_SESSION['datos'][0]['Status'] >= '1' && $_SESSION['datos'][0]['Rol'] >='1') {
 				$this->load->view('header');
 				$this->load->view('Administracion');
 				$this->load->view('footer');

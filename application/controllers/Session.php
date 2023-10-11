@@ -13,7 +13,7 @@ class Session extends CI_Controller
         $data = $this->input->post(); // Obtener los datos del formulario de inicio de sesión
         
         // Llamar a la función del modelo para verificar el inicio de sesión
-        $resp = $this->CRUDESQL->Login($data['Usuario'], $data['Password']);
+        $resp = $this->SessionSQL->Login($data['Usuario'], $data['Password']);
 
         if (count($resp) > 0) {
             session_start();
