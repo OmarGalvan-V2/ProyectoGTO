@@ -20,6 +20,7 @@ function actualizar(ID) {
             Status: estatus // Nuevo estado (1 para habilitado, 0 para deshabilitado)
         },
         success: function(response) {
+            console.log(response)
             if (!response) {
                 // Mostrar una alerta de error si la respuesta indica un problema
                 Swal.fire({

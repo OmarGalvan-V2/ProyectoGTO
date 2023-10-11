@@ -1,0 +1,16 @@
+     /* CSS para el contenedor principal específico */
+     .contenedor-mapa {
+        display: flex;
+        /* Utiliza Flexbox */
+        align-items: flex-start;
+        /* Alinea los elementos en la parte superior */
+        margin-inline: 100px;
+    }
+
+    /* CSS para el mapa */
+    #chartdiv {
+        flex: 1;
+        /* El mapa ocupará todo el espacio disponible en el contenedor */
+    }
+
+    

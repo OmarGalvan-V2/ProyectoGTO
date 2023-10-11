@@ -32,6 +32,27 @@ function RulesForm($formvalidation){
             'Errors' => array_merge($valid = $formvalidation->form_validation->error_array())
         );
         return ($respuesta);
-        
     }
 }
+
+function RulesForm2($formvalidation) {
+    $formvalidation->form_validation->set_rules('Nombre', 'Nombre', 'required|trim');
+    $formvalidation->form_validation->set_rules('Paterno', 'Paterno', 'required|trim');
+    $formvalidation->form_validation->set_rules('Materno', 'Materno', 'required|trim');
+    $formvalidation->form_validation->set_rules('Correo', 'Correo', 'required');
+    $formvalidation->form_validation->set_rules('Usuario', 'Usuario', 'required|trim');
+    $formvalidation->form_validation->set_rules('PuestoLaboral', 'PuestoLaboral', 'required|trim');
+    $formvalidation->form_validation->set_rules('AreaLaboral', 'AreaLaboral', 'required|trim');
+
+    $valid = $formvalidation->form_validation->run();
+
+    $respuesta = [
+        'ok' => ($valid ? 1 : 2),
+        'Errors' => $formvalidation->form_validation->error_array()
+    ];
+
+    return $respuesta;
+}
+
+
+?>

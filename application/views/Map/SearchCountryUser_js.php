@@ -1,9 +1,9 @@
 <link rel="stylesheet" href=<?= base_url('CSS/Searchcountry.css') ?>>
 
 <script>
-    function SearchCountry(Countryid) {
+    function SearchCountryUser(Countryid) {
         $.ajax({
-            url: '<?= base_url('Welcome/ConsultaMapi/') ?>',
+            url: '<?= base_url('Welcome/ConsultaUserMap/') ?>',
             type: 'POST',
             data: {
                 'Countryid': Countryid
@@ -25,6 +25,7 @@
             }
         });
     }
+
 
     function CreateModal(data) {
         // Extrae los datos
@@ -83,55 +84,16 @@
             </div>
         `;
         }
-        
-        modalContent += `
-    <div class="text-center">
-        <a class="btn btn-primary edit-button" href="<?= base_url() . "Welcome/EditarMapText?IDPais="?>${IDPais}">
-            <i class="fas fa-pencil-alt"></i> Editar Texto
-        </a>
-    </div>
-`;
-        if(Estado == '1'){
             modalContent += `
                 </div> <!-- Cierre del div "accordion" -->
             </div> <!-- Cierre del div "modal-body" -->
             <div class="modal-footer">
-            <a class="btn btn-info" target="_blank" href="https://solicitudes.juventudesgto.com/profiler">Ver más</a>
-                <div class="switch-container" style="margin-inline: 280px">
-                
-                    <label class="switch">
-                        <div style="display:flex; margin-top: -20px;">
-                            <p>Status</p>
-                            <input type="checkbox" ${Estado ? 'checked' : ''} id="${IDPais}" onclick="actualizar(this)">
-                            <span class="slider round"></span>
-                        </div>
-                    </label>
-                </div>
+                <a class="btn btn-info" target="_blank" href="https://solicitudes.juventudesgto.com/profiler" >Ver más</a>
                 <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
             </div>
         </div> <!-- Cierre del div "modal-content" -->
     </div> <!-- Cierre del div "modal-dialog" -->
-    `;
-        }else{        modalContent += `
-                </div> <!-- Cierre del div "accordion" -->
-            </div> <!-- Cierre del div "modal-body" -->
-            <div class="modal-footer">
-            <a class="btn btn-info" target="_blank" href="https://solicitudes.juventudesgto.com/profiler">Ver más</a>
-
-                <div class="switch-container" style="margin-inline: 280px">
-                    <label class="switch">
-                        <div style="display:flex; margin-top: -20px;">
-                            <p>Status</p>
-                            <input type="checkbox"  id="${IDPais}" onclick="actualizar(this)">
-                            <span class="slider round"></span>
-                        </div>
-                    </label>
-                </div>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div> <!-- Cierre del div "modal-content" -->
-    </div> <!-- Cierre del div "modal-dialog" -->
-    `;}
+    `
         
         var modal = $('<div class="modal" tabindex="-1" role="dialog">' + modalContent + '</div>');
 
@@ -144,5 +106,9 @@
         sectionContent.slideToggle();
     }
 
+
+    function toggleSection(sectionId) {
+        const sectionContent = $(`#${sectionId} .section-content`);
+        sectionContent.slideToggle();
+    }
 </script>
-<?php $this->load->view('StatusCountry-People/EstadoDelPais_js') ?>

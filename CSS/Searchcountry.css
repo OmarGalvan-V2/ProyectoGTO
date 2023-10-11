@@ -1,0 +1,179 @@
+    /* Estilos para el modal */
+    .modal-dialog {
+        max-width: 800px;
+        /* Ancho máximo del modal */
+    }
+
+    /* Estilos para el título del modal */
+    .modal-title {
+        font-size: 24px;
+        font-weight: bold;
+
+    }
+
+    /* Estilos para el botón de cerrar */
+    .close {
+        font-size: 30px;
+        color: #333;
+        opacity: 1;
+    }
+
+    .close:hover {
+        color: #ff0000;
+        /* Cambiar color al pasar el ratón por encima */
+    }
+
+    /* Estilos para el contenido del modal */
+    .modal-body {
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    /* Estilos para las secciones del mapa conceptual */
+    .section {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+
+    /* Estilos para las secciones de Beneficio, Justificación y Datos */
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 10px;
+        color: #007bff;
+        /* Color relacionado con el tema */
+    }
+
+    .section-title i {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+        color: #007bff;
+        /* Color relacionado con el tema */
+    }
+
+    .section-title.active i {
+        transform: rotate(180deg);
+        /* Rotar el icono hacia abajo cuando está activo */
+    }
+
+    .section-content {
+        display: none;
+        text-align: center;
+        /* Centralizar el texto en las secciones */
+        padding: 20px;
+        /* Agregar espacio alrededor del contenido */
+        background-color: #f0f0f0;
+        /* Fondo de color suave */
+        border-radius: 5px;
+        /* Borde redondeado */
+        transition: background-color 0.3s ease;
+        /* Transición suave del color de fondo */
+    }
+
+    .section-content p {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+        /* Color de texto oscuro */
+    }
+
+    /* Hover para cambiar el color de fondo */
+    .section:hover .section-content {
+        background-color: #e0e0e0;
+        /* Cambio de color al pasar el ratón por encima */
+    }
+
+
+    /* Estilos para el botón "Ver más" */
+    .btn-info {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+    }
+
+    .btn-info:hover {
+        background-color: #0056b3;
+    }
+
+    /* Estilos para el interruptor de status */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+    input:checked+.slider {
+        background-color: #007bff;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #007bff;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(26px);
+    }
+
+    /* Estilos para el botón de cerrar modal */
+    .btn-warning {
+        background-color: #ffc107;
+        color: #333;
+        border: none;
+    }
+
+    .btn-warning:hover {
+        background-color: #ffab00;
+    }
+
+    @media (max-width: 768px) {
+        .modal-dialog {
+            width: 95%; /* Reducir el ancho en dispositivos móviles */
+        }
+    
+        .modal-title {
+            font-size: 20px;
+        }
+    
+        .close {
+            font-size: 20px;
+            top: 5px;
+            right: 5px;
+        }
+    
+        .modal-body {
+            padding: 10px;
+        }
+    
+        .btn-info, .btn-warning {
+            font-size: 16px;
+        }
+    }

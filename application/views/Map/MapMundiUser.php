@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa Mundial</title>
 
+    <!-- Icono de la página (favicon) -->
+    <link rel="shortcut icon" href="<?= base_url() . "img/impulso.ico" ?>">
+
     <!-- Resources -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
@@ -21,10 +24,6 @@
     <!--Recursos de CSS-->
     <link rel="stylesheet" href=<?= base_url('CSS/InterfazMap.css') ?>>
     <link rel="stylesheet" href=<?= base_url('CSS/InterfazMapa.css') ?>>
-
-
-    <!-- Icono de la página (favicon) -->
-    <link rel="shortcut icon" href="<?= base_url() . "img/impulso.ico" ?>">
 
 </head>
 
@@ -101,22 +100,22 @@
             fill: colors.getIndex(9)
         });
 
+        // Asociar un evento 'click' a los polígonos del mapa
         worldSeries.mapPolygons.template.events.on("click", (ev) => {
+            // Obtener el objeto de datos correspondiente al país seleccionado
             var dataItem = ev.target.dataItem;
-            let Countryid = ev.target.dataItem.dataContext.id
-            SearchCountry(Countryid);
-
+            let Countryid = ev.target.dataItem.dataContext.id;
+            // Llamar a la función 'SearchCountryUser' con el ID del país como argumento
+            SearchCountryUser(Countryid);
         });
 
-        // Declarar arrays para almacenar datos de 'Status' e 'id_pais'
+        // Declarar arrays para almacenar datos de status y ID de países
         var Status = [];
         var id_pais = [];
 
-        // Utilizar PHP para llenar los arrays 'Status' e 'id_pais'
+        // Utilizar PHP para agregar datos al array 'Status' y 'id_pais'
         <?php for ($i = 0; $i < count($Convocatorias); $i++) { ?>
-            // Agregar el valor 'Status' del país al array 'Status'
             Status.push("<?= $Convocatorias[$i]['Status']; ?>");
-            // Agregar el valor 'IDPais' del país al array 'id_pais'
             id_pais.push("<?= $Convocatorias[$i]['IDPais']; ?>");
         <?php } ?>
 
@@ -124,28 +123,28 @@
         var data = [];
         var contador = 0;
 
-        // Iterar sobre los datos de países proporcionados por 'am5geodata_data_countries2'
+        // Iterar sobre los datos de países
         for (var id in am5geodata_data_countries2) {
             if (am5geodata_data_countries2.hasOwnProperty(id)) {
                 var country = am5geodata_data_countries2[id];
                 if (country.maps.length) {
                     if (Status[contador] == '1') {
-                        // Configurar datos para países con 'Status' igual a '1'
+                        // Configurar datos para países con Status '1'
                         data.push({
                             id: id,
                             map: country.maps[0],
                             polygonSettings: {
-                                fill: am5.color(0x7bbdff), // Color de relleno para estos países
+                                fill: am5.color(0x7bbdff), // Color de relleno
                             }
                         });
                         contador++;
                     } else {
-                        // Configurar datos para países con 'Status' diferente de '1'
+                        // Configurar datos para países con Status diferente de '1'
                         data.push({
                             id: id,
                             map: country.maps[0],
                             polygonSettings: {
-                                fill: am5.color(0xff0000), // Color de relleno para estos países
+                                fill: am5.color(0xff0000), // Color de relleno diferente
                             }
                         });
                         contador++;
@@ -154,8 +153,9 @@
             }
         }
 
-        // Establecer los datos de los países en el objeto 'worldSeries.data'
+        // Establecer los datos de los países en el mapa
         worldSeries.data.setAll(data);
+
 
         // Add zoom control
         // https://www.amcharts.com/docs/v5/charts/map-chart/map-pan-zoom/#Zoom_control
@@ -178,7 +178,7 @@
     }
 </script>
 
-<?php $this->load->view('Map/SearchCountry_js') ?>
+<?php $this->load->view('Map/SearchCountryUser_js') ?>
 
 </html>
 
