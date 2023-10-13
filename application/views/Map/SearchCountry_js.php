@@ -38,8 +38,8 @@
         var modalContent = `
         <div class="modal-dialog modal-lg modal-with-background">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"> Convocatoria: ${pais} </h5>
+                <div class="modal-header ">
+                    <h5 class="modal-title ml-auto"> Convocatoria: ${pais} </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -83,56 +83,56 @@
             </div>
         `;
         }
-        
+
         modalContent += `
-    <div class="text-center">
-        <a class="btn btn-primary edit-button" href="<?= base_url() . "Welcome/EditarMapText?IDPais="?>${IDPais}">
-            <i class="fas fa-pencil-alt"></i> Editar Texto
-        </a>
-    </div>
+                        <div class="text-center mr-auto ml-auto">
+                            <a class="btn btn-primary edit-button" href="<?= base_url() . "Welcome/EditarMapText?IDPais=" ?>${IDPais}">
+                            <i class="fas fa-pencil-alt"></i> Editar Texto </a>
+                        </div>
 `;
-        if(Estado == '1'){
+        if (Estado == '1') {
+            modalContent += `
+            </div> <!-- Cierre del div "accordion" -->
+            </div> <!-- Cierre del div "modal-body" -->
+                <div class="modal-footer">
+                <a class="btn btn-outline-primary ms-auto" target="_blank" href="https://solicitudes.juventudesgto.com/profiler">Ver más</a>
+                    <div class="switch-container mx-auto">
+            <label class="switch">
+                <div style="display:flex; margin-top: -20px;">
+                    <p>Status</p>
+                    <input type="checkbox" ${Estado ? 'checked' : ''} id="${IDPais}" onclick="actualizar(this)">
+                    <span class="slider round"></span>
+                </div>
+            </label>
+        </div>
+            <a class="btn btn-outline-info ms-auto" target="_blank" href="">Más convocatorias</a>
+        </div>
+
+            </div> <!-- Cierre del div "modal-content" -->
+            </div> <!-- Cierre del div "modal-dialog" -->
+    `;
+        } else {
             modalContent += `
                 </div> <!-- Cierre del div "accordion" -->
             </div> <!-- Cierre del div "modal-body" -->
             <div class="modal-footer">
-            <a class="btn btn-info" target="_blank" href="https://solicitudes.juventudesgto.com/profiler">Ver más</a>
-                <div class="switch-container" style="margin-inline: 280px">
-                
-                    <label class="switch">
+                    <a class="btn btn-outline-primary ms-auto" target="_blank" href="https://solicitudes.juventudesgto.com/profiler">Ver más</a>
+                    <div class="switch-container mx-auto">
+                         <label class="switch">
                         <div style="display:flex; margin-top: -20px;">
                             <p>Status</p>
                             <input type="checkbox" ${Estado ? 'checked' : ''} id="${IDPais}" onclick="actualizar(this)">
-                            <span class="slider round"></span>
-                        </div>
-                    </label>
+                        <span class="slider round"></span>
                 </div>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
-            </div>
+            </label>
+        </div>
+            <a class="btn btn-outline-info ms-auto" target="_blank" href="">Más convocatorias</a>
+        </div>
         </div> <!-- Cierre del div "modal-content" -->
     </div> <!-- Cierre del div "modal-dialog" -->
     `;
-        }else{        modalContent += `
-                </div> <!-- Cierre del div "accordion" -->
-            </div> <!-- Cierre del div "modal-body" -->
-            <div class="modal-footer">
-            <a class="btn btn-info" target="_blank" href="https://solicitudes.juventudesgto.com/profiler">Ver más</a>
+        }
 
-                <div class="switch-container" style="margin-inline: 280px">
-                    <label class="switch">
-                        <div style="display:flex; margin-top: -20px;">
-                            <p>Status</p>
-                            <input type="checkbox"  id="${IDPais}" onclick="actualizar(this)">
-                            <span class="slider round"></span>
-                        </div>
-                    </label>
-                </div>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div> <!-- Cierre del div "modal-content" -->
-    </div> <!-- Cierre del div "modal-dialog" -->
-    `;}
-        
         var modal = $('<div class="modal" tabindex="-1" role="dialog">' + modalContent + '</div>');
 
         modal.modal('show');
@@ -143,6 +143,5 @@
         const sectionContent = $(`#${sectionId} .section-content`);
         sectionContent.slideToggle();
     }
-
 </script>
 <?php $this->load->view('StatusCountry-People/EstadoDelPais_js') ?>

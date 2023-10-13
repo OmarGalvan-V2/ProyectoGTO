@@ -125,72 +125,70 @@
             </div>
 
 
-            <div class="col-12 veda">
-                <div class="col-6 col-md-3 col-lg-3">
-                    <div class="navbar-header">
-                        <a href="#" style="margin: auto";></a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-sm-12">
+                        <div class="navbar-header">
+                            <a href="#"></a>
+                        </div>
                     </div>
-
+                    <div class="col-12 col-lg-6 col-sm-12">
+                        <ul class="nav justify-content-end">
+                            <?php if (isset($_SESSION) > 0) : ?>
+                                <?php if ($_SESSION['datos'][0]['Status'] == '1' && $_SESSION['datos'][0]['Rol'] == '1') { ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href=<?= base_url() . "Welcome/Administracion" ?>>
+                                            <span class="fas fa-home"></span> Inicio
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href=<?= base_url() . "Welcome/AdministracionUsuario" ?>>
+                                            <span class="fas fa-user"></span> Usuario
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href=<?= base_url() . "Welcome/AdministracionMapi" ?>>
+                                            <span class="fas fa-globe"></span> Convocatoria Internacional
+                                        </a>
+                                    </li>
+                                    <li class="nav-item no-hover-background">
+                                        <a class="nav-link" href=<?= base_url() . "Session/CerrarSesion" ?>>
+                                            <span class="fas fa-sign-out-alt"></span> Cerrar Sesión
+                                        </a>
+                                    </li>
+                                <?php } elseif (($_SESSION['datos'][0]['Rol'] == 2) && $_SESSION['datos'][0]['Status'] == '1') { ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href=<?= base_url() . "Welcome/Administracion" ?>>
+                                            <span class="fas fa-home"></span> Inicio
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href=<?= base_url() . "Welcome/AdministracionMapi" ?>>
+                                            <span class="fas fa-globe"></span> Convocatoria Internacional
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href=<?= base_url() . "Session/CerrarSesion" ?>>
+                                            <span class="fas fa-sign-out-alt"></span> Cerrar Sesión
+                                        </a>
+                                    </li>
+                                <?php } else { ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href=<?= base_url() . "Welcome/index" ?>>
+                                            <span class="fas fa-globe"></span> Convocatoria Internacional
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href=<?= base_url() . "Welcome/index" ?>>
+                                            <span class="fas fa-address-book"></span> Directorio
+                                        </a>
+                                    </li>
+                                <?php } ?>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-6 col-md-9 col-lg-9 justify-content-end" style="margin-left:auto; padding: 10px;">
-                    <ul class="nav d-flex justify-content-end">
-                        <?php if (isset($_SESSION) > 0) : ?>
-                            <?php if ($_SESSION['datos'][0]['Status'] == '1' && $_SESSION['datos'][0]['Rol'] == '1') { ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href=<?= base_url() . "Welcome/Administracion" ?>>
-                                        <span class="fas fa-home"></span> Inicio
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href=<?= base_url() . "Welcome/AdministracionUsuario" ?>>
-                                        <span class="fas fa-user"></span> Usuario
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href=<?= base_url() . "Welcome/AdministracionMapi" ?>>
-                                        <span class="fas fa-globe"></span> Convocatoria Internacional
-                                    </a>
-                                </li>
-                                <li class="nav-item no-hover-background">
-                                    <a class="nav-link" href=<?= base_url() . "Session/CerrarSesion" ?>>
-                                        <span class="fas fa-sign-out-alt"></span> Cerrar Sesión
-                                    </a>
-                                </li>
-                            <?php } elseif (($_SESSION['datos'][0]['Rol'] == 2) && $_SESSION['datos'][0]['Status'] == '1') { ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href=<?= base_url() . "Welcome/Administracion" ?>>
-                                        <span class="fas fa-home"></span> Inicio
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href=<?= base_url() . "Welcome/AdministracionMapi" ?>>
-                                        <span class="fas fa-globe"></span> Convocatoria Internacional
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href=<?= base_url() . "Session/CerrarSesion" ?>>
-                                        <span class="fas fa-sign-out-alt"></span> Cerrar Sesión
-                                    </a>
-                                </li>
-                            <?php } else { ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href=<?= base_url() . "Welcome/index" ?>>
-                                        <span class="fas fa-globe"></span> Convocatoria Internacional
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href=<?= base_url() . "Welcome/index" ?>>
-                                        <span class="fas fa-address-book"></span> Directorio
-                                    </a>
-                                </li>
-                            <?php } ?>
-                        <?php endif; ?>
-                    </ul>
-                </div>
-                <div class="botbar">
-                    <div class="barC1"></div>
-                    <div class="barC2"></div>
-                </div>
+            </div>
         </header>
         <br><br><br>
 

@@ -56,7 +56,7 @@ class CRUDEP extends CI_Controller
         if ($Errores['ok'] == 2) {
             echo json_encode(
                 array(
-                    'ok' => false,
+                    'ok' => true,
                     'Errors' => $Errores['Errors']
                 ),
             );

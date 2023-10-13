@@ -5,8 +5,6 @@
 }
 
 .body {
-    align-items: center;
-    justify-content: center;
     /*Centra todos los elementos dentro del body*/
     height: auto;
     /*Establecemos la altura de los elementos dentro de nuestro body*/

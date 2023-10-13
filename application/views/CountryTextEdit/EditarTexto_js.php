@@ -14,23 +14,24 @@
                     console.log(response)
                     if (!response) {
                         Swal.fire({
-                                    icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Favor De Llenar los datos solicitados'
-                                })
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Favor De Llenar los datos solicitados'
+                        })
                     } else {
                         Swal.fire({
-                                    title: 'El Pais ha sido actualizado correctamente!',
-                                    text: 'Click para continuar!',
-                                    icon: 'success'
-                                }).then(() => {
-                                    window.location.href = 'http://localhost/ProyectoGTO/Welcome/AdministracionMapi'
-                                });
+                            title: 'El Pais ha sido actualizado correctamente!',
+                            text: 'Click para continuar!',
+                            icon: 'success'
+                        }).then(() => {
+                            window.location.href = 'http://localhost/ProyectoGTO/Welcome/AdministracionMapi'
+                        });
                     }
-
                 },
-                error: function(response) {
-
+                error: function(xhr, status, error) {
+                    console.log("Error en la solicitud AJAX:");
+                    console.log("Estado: " + status);
+                    console.log("Error: " + error);
                 }
             });
         })
