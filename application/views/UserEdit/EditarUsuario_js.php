@@ -17,7 +17,7 @@
                 dataType: 'json',
                 success: function(response) {
                     // Esta función se ejecuta cuando la solicitud AJAX tiene éxito.
-                    if (response.ok) {
+                if (response.ok) {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',

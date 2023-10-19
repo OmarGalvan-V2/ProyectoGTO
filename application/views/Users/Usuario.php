@@ -6,9 +6,6 @@
 <title>JuventudEsGTO</title>
 
 
-<!-- Icono de la página (favicon) -->
-<link rel="shortcut icon" href="<?= base_url() . 'img/impulso.ico' ?>">
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
@@ -16,7 +13,9 @@
 <script src="https://kit.fontawesome.com/c575c56047.js" crossorigin="anonymous"></script>
 
 <!-- jQuery Slim-->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
@@ -55,7 +54,7 @@
         <!--Aqui Es El Registro De Los Empleados-->
         <div class="container">
             <div class="row">
-                <div class="col-12 ml-auto mr-auto">
+                <div class="col-sm-12 col-lg-6 ml-auto mr-auto" style="display: flex; justify-content: space-around; flex-direction: column;">
                     <a class="btn btn-primary" href="<?= base_url() ?>Welcome/AdministracionForm">
                         <i class="fa fa-user-plus"></i> Registrar Empleado y/o Usuario </a>
                 <?php endif; ?>
@@ -69,7 +68,9 @@
                 <!--mr-auto: margen right: automatico-->
                 <div class="col-sm-12 col-lg-6 ml-auto mr-auto">
                     <div class="alert alert-primary" role="alert" style="padding:.75rem">
-                        <b><p style="font-size: larger; text-align: center;">Administración de Usuario</p></b>
+                        <b>
+                            <h1 style="font-size: 30px; text-align: center;">Administración de Usuario</h1>
+                        </b>
                     </div>
                 </div>
             </div>

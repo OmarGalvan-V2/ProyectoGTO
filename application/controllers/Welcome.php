@@ -28,16 +28,16 @@ class Welcome extends CI_Controller
 	function Administracion()
 	{
 		session_start();
-		if (isset($_SESSION) > 0) {
-			if ($_SESSION['datos'][0]['Status'] >= '1' && $_SESSION['datos'][0]['Rol'] >='1') {
+		if (count($_SESSION) > 0) {
+			if ($_SESSION['datos'][0]['Status'] == '1' && $_SESSION['datos'][0]['Rol'] >= '1'){
 				$this->load->view('header');
 				$this->load->view('Administracion');
 				$this->load->view('footer');
 			} else {
-				echo 'Acceso no autorizado';
+				$this->load->view('NoAutorizado');
 			}
-		} else {
-			redirect('Welcome/index');
+		}else{
+			$this->load->view('NoAutorizado');
 		}
 	}
 
@@ -51,10 +51,10 @@ class Welcome extends CI_Controller
 				$this->load->view('Users/Usuario', $data);
 				$this->load->view('footer');
 			} else {
-				echo 'No tienes acceso a esta pagina :(';
+				$this->load->view('NoAutorizado');
 			}
 		} else {
-			redirect('Welcome/index');
+			$this->load->view('NoAutorizado');
 		}
 	}
 
@@ -68,10 +68,10 @@ class Welcome extends CI_Controller
 				$this->load->view('Map/MapaMundi', $data);
 				$this->load->view('footer');
 			} else {
-				echo 'No tienes acceso a esta pagina :(';
+				$this->load->view('NoAutorizado');
 			}
 		} else {
-			redirect('Welcome/index');
+			$this->load->view('NoAutorizado');
 		}
 	}
 
@@ -96,11 +96,9 @@ class Welcome extends CI_Controller
 				$this->load->view('UserRegister/RegistroEmpleado', $data);
 				$this->load->view('footer');
 			} else {
-				echo "Acceso no autorizado";
+				$this->load->view('NoAutorizado');
 			}
-		} else {
-			redirect('Welcome/index');
-		}
+		} 
 	}
 
 	function EditarUsuario()
@@ -124,10 +122,10 @@ class Welcome extends CI_Controller
 				$this->load->view('UserEdit/EditarUsuario', $Arr);
 				$this->load->view('footer');
 			} else {
-				echo 'Acceso no autorizado';
+				$this->load->view('NoAutorizado');
 			}
 		} else {
-			redirect('Welcome/index');
+			$this->load->view('NoAutorizado');
 		}
 	}
 
@@ -147,10 +145,10 @@ class Welcome extends CI_Controller
 				$this->load->view('CountryTextEdit/EditTextCountry', $Arr);
 				$this->load->view('footer');
 			} else {
-				echo 'Acceso no autorizado';
+				$this->load->view('NoAutorizado');
 			}
 		} else {
-			redirect('Welcome/index');
+			$this->load->view('NoAutorizado');
 		}
 	}
 

@@ -7,7 +7,6 @@
     <title>Informacion Usuario</title>
 </head>
 
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
@@ -23,9 +22,6 @@
 
 <!-- SweetAlert2 -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-<!-- Icono de la página (favicon) -->
-<link rel="shortcut icon" href="<?= base_url() . "img/impulso.ico" ?>">
 
 </head>
 

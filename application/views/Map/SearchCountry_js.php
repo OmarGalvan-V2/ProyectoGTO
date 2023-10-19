@@ -100,8 +100,7 @@
             <label class="switch">
                 <div style="display:flex; margin-top: -20px;">
                     <p>Status</p>
-                    <input type="checkbox" ${Estado ? 'checked' : ''} id="${IDPais}" onclick="actualizar(this)">
-                    <span class="slider round"></span>
+                    <input type="checkbox" ${Estado ? 'checked' : ''} id="${IDPais}" onclick="actualizar(this)">                    <span class="slider round"></span>
                 </div>
             </label>
         </div>
@@ -121,8 +120,7 @@
                          <label class="switch">
                         <div style="display:flex; margin-top: -20px;">
                             <p>Status</p>
-                            <input type="checkbox" ${Estado ? 'checked' : ''} id="${IDPais}" onclick="actualizar(this)">
-                        <span class="slider round"></span>
+                            <input type="checkbox"  id="${IDPais}" onclick="actualizar(this)">                        <span class="slider round"></span>
                 </div>
             </label>
         </div>

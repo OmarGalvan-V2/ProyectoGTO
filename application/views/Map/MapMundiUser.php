@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa Mundial</title>
 
-    <!-- Icono de la página (favicon) -->
-    <link rel="shortcut icon" href="<?= base_url() . "img/impulso.ico" ?>">
-
     <!-- Resources -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
@@ -20,15 +17,54 @@
     <!--Recursos de boostrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
 
     <!--Recursos de CSS-->
     <link rel="stylesheet" href=<?= base_url('CSS/InterfazMap.css') ?>>
     <link rel="stylesheet" href=<?= base_url('CSS/InterfazMapa.css') ?>>
 
-</head>
+    <!-- Icono de la página (favicon) -->
+    <link rel="short icon" href="<?=base_url()."img/impulso.ico" ?>">
 
+</head>
+<style>
+    .estado {
+    display: flex;
+  }
+  
+  .cuadro {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .activo {
+        background-color: #000599;
+        color: white;
+        top: 0;
+    }
+
+    .inactivo {
+        background-color: #ff6a13;
+        color: white;
+        top: 50px;
+    }
+  
+</style>
 <body>
-    <div id="chartdiv"></div>
+<div id="chartdiv" style="width: auto;"></div>
+    <div class="col-lg-12 col-lg-6  col-sm-12">
+        <div>
+        <div class="estado">
+            <div class="cuadro activo"></div>
+            <p>Paises Activos</p>
+        </div>
+        <div class="estado">
+            <div class="cuadro inactivo"></div>
+            <p>Paises Inactivos</p>
+        </div>
+        </div>
+    </div>
 </body>
 <!-- Chart code -->
 <script>
@@ -134,7 +170,7 @@
                             id: id,
                             map: country.maps[0],
                             polygonSettings: {
-                                fill: am5.color(0x7bbdff), // Color de relleno
+                                fill: am5.color(0x000599), // Color de relleno
                             }
                         });
                         contador++;
@@ -144,7 +180,7 @@
                             id: id,
                             map: country.maps[0],
                             polygonSettings: {
-                                fill: am5.color(0xff0000), // Color de relleno diferente
+                                fill: am5.color(0xff6a13), // Color de relleno diferente
                             }
                         });
                         contador++;

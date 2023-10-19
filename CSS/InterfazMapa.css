@@ -1,16 +1,21 @@
-     /* CSS para el contenedor principal específico */
-     .contenedor-mapa {
-        display: flex;
-        /* Utiliza Flexbox */
-        align-items: flex-start;
-        /* Alinea los elementos en la parte superior */
-        margin-inline: 100px;
-    }
-
-    /* CSS para el mapa */
-    #chartdiv {
-        flex: 1;
-        /* El mapa ocupará todo el espacio disponible en el contenedor */
-    }
-
-    
+.estado {
+    display: flex;
+  }
+  
+  .cuadro {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .activo {
+    background-color: rgb(64, 196, 255);
+    color: white;
+    top: 0;
+  }
+  
+  .inactivo {
+    background-color: red;
+    color: white;
+    top: 50px;
+  }
+  

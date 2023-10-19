@@ -22,14 +22,47 @@
     <link rel="stylesheet" href=<?= base_url('CSS/InterfazMap.css') ?>>
     <link rel="stylesheet" href=<?= base_url('CSS/InterfazMapa.css') ?>>
 
-
     <!-- Icono de la página (favicon) -->
     <link rel="shortcut icon" href="<?= base_url() . "img/impulso.ico" ?>">
 
 </head>
+<style>
+    .estado {
+        display: flex;
+    }
+
+    .cuadro {
+        width: 20px;
+        height: 20px;
+    }
+
+    .activo {
+        background-color: #000599;
+        color: white;
+        top: 0;
+    }
+
+    .inactivo {
+        background-color: #ff6a13;
+        color: white;
+        top: 50px;
+    }
+</style>
 
 <body>
-    <div id="chartdiv"></div>
+<div id="chartdiv" style="width: auto;"></div>
+    <div class="col-lg-12 col-lg-6  col-sm-12">
+        <div>
+        <div class="estado">
+            <div class="cuadro activo"></div>
+            <p>Paises Activos</p>
+        </div>
+        <div class="estado">
+            <div class="cuadro inactivo"></div>
+            <p>Paises Inactivos</p>
+        </div>
+        </div>
+    </div>
 </body>
 <!-- Chart code -->
 <script>
@@ -135,7 +168,7 @@
                             id: id,
                             map: country.maps[0],
                             polygonSettings: {
-                                fill: am5.color(0x7bbdff), // Color de relleno para estos países
+                                fill: am5.color(0x000599), // Color de relleno para estos países
                             }
                         });
                         contador++;
@@ -145,7 +178,7 @@
                             id: id,
                             map: country.maps[0],
                             polygonSettings: {
-                                fill: am5.color(0xff0000), // Color de relleno para estos países
+                                fill: am5.color(0xff6a13), // Color de relleno para estos países
                             }
                         });
                         contador++;
