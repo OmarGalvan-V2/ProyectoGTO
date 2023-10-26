@@ -93,6 +93,7 @@ button {
     padding: 8px;
 }
 
+
 /* Estilo para los botones de acción */
 .btn {
     padding: 10px 15px;
@@ -192,3 +193,4 @@ input:checked+.slider:before {
     margin-top: 10px;
     font-weight: bold;
 }
+

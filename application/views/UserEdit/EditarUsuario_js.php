@@ -21,7 +21,7 @@
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'Favor De Llenar los datos solicitados'
+                            text: 'No se ha detectado ningún cambio.Favor de realizar un cambio o salir del usuario'
                         });
                         showFormValidationErrors(response.Errors);
                     } else {

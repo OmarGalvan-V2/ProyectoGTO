@@ -7,6 +7,7 @@
     <title>Mapa Mundial</title>
 
     <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/geodata/lang/ES.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
@@ -25,7 +26,7 @@
     <link rel="stylesheet" href=<?= base_url('CSS/InterfazMapa.css') ?>>
 
     <!-- Icono de la página (favicon) -->
-    <link rel="short icon" href="<?=base_url()."img/impulso.ico" ?>">
+    <link rel="shortcut icon" href="<?= base_url() . "img/impulso.ico" ?>">
 
 </head>
 <style>
@@ -53,7 +54,7 @@
 </style>
 <body>
 <div id="chartdiv" style="width: auto;"></div>
-    <div class="col-lg-12 col-lg-6  col-sm-12">
+    <div>
         <div>
         <div class="estado">
             <div class="cuadro activo"></div>
@@ -104,6 +105,7 @@
         // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
         var worldSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
             geoJSON: am5geodata_worldLow,
+            geodataNames: am5geodata_lang_ES,
             exclude: ["AQ"]
         }));
 

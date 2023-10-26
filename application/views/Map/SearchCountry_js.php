@@ -104,7 +104,7 @@
                 </div>
             </label>
         </div>
-            <a class="btn btn-outline-info ms-auto" target="_blank" href="">Más convocatorias</a>
+            <a class="btn btn-outline-info ms-auto" target="_blank" href="https://solicitudes.juventudesgto.com/profiler">Más convocatorias</a>
         </div>
 
             </div> <!-- Cierre del div "modal-content" -->
@@ -124,7 +124,7 @@
                 </div>
             </label>
         </div>
-            <a class="btn btn-outline-info ms-auto" target="_blank" href="">Más convocatorias</a>
+            <a class="btn btn-outline-info ms-auto" target="_blank" href="https://solicitudes.juventudesgto.com/profiler" >Más convocatorias</a>
         </div>
         </div> <!-- Cierre del div "modal-content" -->
     </div> <!-- Cierre del div "modal-dialog" -->

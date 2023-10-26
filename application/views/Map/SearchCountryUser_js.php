@@ -88,7 +88,7 @@
                 </div> <!-- Cierre del div "accordion" -->
             </div> <!-- Cierre del div "modal-body" -->
             <div class="modal-footer">
-            <a class="btn btn-outline-info ms-auto" target="_blank" href="">Más convocatorias</a>
+            <a class="btn btn-outline-info ms-auto" target="_blank" href="https://solicitudes.juventudesgto.com/profiler" >Más convocatorias</a>
             <a class="btn btn-outline-primary mx-auto" target="_blank" href="https://solicitudes.juventudesgto.com/profiler">Ver más</a>
             <button type="button" class="btn btn-outline-danger me-auto" data-dismiss="modal">Cerrar</button>
         </div>

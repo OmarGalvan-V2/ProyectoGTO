@@ -16,7 +16,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </script>
 
-
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 
@@ -29,8 +28,15 @@
 <!-- DataTables JS -->
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 
+<link rel="stylesheet" href=<?= base_url()."CSS/InterfazUsuario.css"?>>
+
+
+<style>
+    .dataTables_paginate{
+        background: transparent;
+    }
+</style>
 <!-- Estilos -->
-<link rel="stylesheet" href="<?= base_url('CSS/InterfazUsuario.css') ?>">
 
 <script>
     let table = new DataTable('#table');
@@ -54,7 +60,7 @@
         <!--Aqui Es El Registro De Los Empleados-->
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-lg-6 ml-auto mr-auto" style="display: flex; justify-content: space-around; flex-direction: column;">
+                <div class="col-sm-12 col-lg-6 ml-auto mr-auto" style="display: flex; justify-content: space-around; flex-direction: column; margin-top:-100px;">
                     <a class="btn btn-primary" href="<?= base_url() ?>Welcome/AdministracionForm">
                         <i class="fa fa-user-plus"></i> Registrar Empleado y/o Usuario </a>
                 <?php endif; ?>

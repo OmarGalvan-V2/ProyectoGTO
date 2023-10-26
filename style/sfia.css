@@ -521,7 +521,7 @@ ul.ultransparencia li a {
 @media (max-device-width: 480px){
   .navbar-header a {
       width: 198px;
-      background-size: 185px auto !important;
+      background-size: 154px auto !important;
   }
   .navbar-default .navbar-nav .open .dropdown-menu>li>a {
     color: #fff;

@@ -39,7 +39,4 @@
     </div>
 </body>
 
-<!-- Inclusión de scripts -->
-<?php $this->load->view('UserLogin/UserLogin_js')?>
-
 </html>

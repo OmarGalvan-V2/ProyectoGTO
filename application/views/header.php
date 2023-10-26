@@ -11,14 +11,16 @@
     <link href=<?= base_url() . "libs/fontawesome/css/fontawesome.css" ?> rel="stylesheet">
     <link href=<?= base_url() . "libs/fontawesome/css/brands.css" ?> rel="stylesheet">
     <link href=<?= base_url() . "libs/fontawesome/css/solid.css" ?> rel="stylesheet">
-    <link rel="stylesheet" media="screen" href=<?= base_url() . "style/style.css" ?>>
-    <link rel="stylesheet" media="screen" href=<?= base_url() . "style/sfia.css" ?>>
+    <link rel="stylesheet" media="screen" href=<?= base_url('style/style.css') ?>>
+    <link rel="stylesheet" media="screen" href=<?= base_url('style/sfia.css') ?>>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
     <style>
-        .nav-link {
-            font-size: 18px;
-            /* Ajusta el tamaño de fuente según tus preferencias */
+        @media (max-device-width: 480px) {
+            .navbar-header a {
+                width: 198px;
+                background-size: 154px auto !important;
+            }
         }
     </style>
 
