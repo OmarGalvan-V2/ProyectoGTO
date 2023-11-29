@@ -1,44 +1,29 @@
 <script>
-    $(function() {
-        let pet = $('#FormLogin').attr('action');
-        let met = $('#FormLogin').attr('method');
-        $('#FormLogin').on('submit', function(e) {
-            e.preventDefault();
-            let Usuario = $('#Usuario').val();
-            let Password = $('#Password').val();
-            if (Usuario.trim() == '' || Password.trim() == '') {
-                // Si los campos están vacíos, muestra un mensaje de error al usuario
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Por favor, ingresa un usuario y contraseña',
-                });
-                return false;
+    $(function () {  
+      $('#FormLogin').submit(function (e) {  
+        e.preventDefault(); // Evita que se envíe el formulario por defecto
+        $.ajax({
+          url: $(this).attr('action'),
+          type: 'post',
+          data: $(this).serialize(),
+          success: function (resp) {
+            if (!resp) {
+              Swal.fire({
+                title: '¡Inicio Exitoso!',
+                text: 'Bienvenido al Directorio Administrador',
+                icon: 'success'
+              }).then(() => {
+              window.location.href = 'http://localhost/ProyectoGTO/Welcome/Administracion'
+            });
+            }else{
+              Swal.fire({
+                title: 'Error de autenticación',
+                text: 'Verifique usuario y/o contraseña',
+                icon: 'error'
+              })
             }
-            $.ajax({
-                url: pet,
-                type: met,
-                data: $('#FormLogin').serialize(),
-                success: function(resp) {
-                    if (resp == true) {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'La contraseña y/o usuario son incorrectos',
-                        })
-                    } else {
-                        Swal.fire({
-                            title: 'Sesion Iniciada!',
-                            text: 'Click para continuar!',
-                            icon: 'success'
-                        }).then(() => {
-                            window.location.href =
-                                'http://localhost/ProyectoGTO/Welcome/Administracion'
-                        });
-                    }
-
-                }
-            })
+          }
         })
+      })
     })
-    </script>
+  </script>

@@ -6,7 +6,7 @@
 
 .body {
     align-items: center;
-    justify-content: center; /*Centra todos los elementos dentro del body*/
+    justify-content: center; /*Centra todos los elementos dentro del bozdy*/
     height: 100vh; /*Establecemos la altura de los elementos dentro de nuestro body*/
     background-image: linear-gradient(27deg, #00008B 25%, #F0FFFF);
 }
